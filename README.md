@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🛣️ PathPilot
 
-Currently, two official plugins are available:
+### AI-Powered Last-Mile Decision Engine
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*Intelligent route optimization for the modern delivery ecosystem*
 
-## React Compiler
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Leaflet](https://img.shields.io/badge/Leaflet-Maps-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📖 Description
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**PathPilot** is an AI-powered Last-Mile Decision Engine that helps delivery agents optimize routes, predict customer availability, and make intelligent delivery decisions in real-time. Built for the Chennai, India metropolitan region, PathPilot transforms raw delivery data into actionable intelligence — eliminating inefficiencies and maximizing fleet performance.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| 🧭 **Smart Order Sequencing** | AI-driven spatial clustering to determine the optimal delivery order, minimizing total distance and time. |
+| 🔄 **Real-Time Adaptive Routing** | Live route recalculation that responds instantly to traffic conditions (Normal / Heavy / Jam). |
+| ❌ **Failed Delivery Decision Engine** | Automated resolution workflows when a delivery attempt fails — reassign, reschedule, or redirect. |
+| 👤 **Customer Availability Prediction** | ML-driven scoring to predict the probability a customer is home, ranked before dispatch. |
+| 📍 **Smart Delivery Clustering** | Geographical grouping of delivery stops into efficient micro-clusters around the Chennai hub. |
+| 📱 **Automated Smart Communication** | Simulated customer notification pipeline (SMS/push) with delivery/read receipts tracking. |
+| 🧠 **Learning Feedback System** | Continuous model accuracy improvement based on outcomes (delivered, failed, re-routed). |
+| 🤝 **Multi-Agent Collaboration** | Intelligent workload balancing and live re-assignment of orders across the active driver fleet. |
+
+---
+
+## 🗺️ Live Map Intelligence
+
+The spatial map view provides:
+- **Numbered Sequence Markers** — See your delivery order at a glance (1 → 2 → 3...)
+- **Before vs. After Comparison** — Toggle between the raw trajectory and the AI-optimized sequence
+- **Traffic Overlay** — Route color changes dynamically based on live traffic conditions
+- **Dark Mode Cartography** — High-fidelity map tiles for a premium operational experience
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend** | React 18 + TypeScript + Vite |
+| **Animations** | Framer Motion |
+| **Maps** | Leaflet.js + React-Leaflet |
+| **Icons** | Lucide React |
+| **Backend** | Node.js |
+| **Database** | Supabase |
+| **AI/ML** | Python (Simulation Engine) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js ≥ 18.x
+- npm ≥ 9.x
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Siva-Vidhya/PathPilot.git
+cd PathPilot
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+---
+
+## 📁 Project Structure
+
+```
+PathPilot/
+├── src/
+│   ├── components/       # Reusable UI components (Sidebar, Toast, Layout...)
+│   ├── pages/            # Full page views (Dashboard, Map, Orders, Insights...)
+│   ├── hooks/            # Custom React hooks (useSimulation)
+│   ├── data/             # Mock data & initial state
+│   ├── types/            # TypeScript type definitions
+│   └── main.tsx          # Application entry point
+├── public/               # Static assets
+├── index.html
+├── vite.config.ts
+└── package.json
+```
+
+---
+
+## 🌍 Region
+
+> Currently configured for the **Chennai, Tamil Nadu** metropolitan hub.  
+> Hub Coordinates: `13.0827° N, 80.2707° E`
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ for smarter last-mile logistics</sub>
+</div>
